@@ -56,4 +56,25 @@ flex
     1   2   3   4  5
 
 
+
+///////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////
+//CSS Grid
+
+Intro
+    Grid --> CSS3 module
+    Replaces `float`
+    Works with FlexBox
+    2D version of FlexBox
+
+Terminalogy
+    Columns 
+        vertical grid line
+    Row
+        horizontal grid line
+    containers
+        Grid Items referred to by it's top left coordinate
+    coordinate  
+        composed of intersecting grid line
+    
         
