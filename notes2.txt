@@ -1,0 +1,59 @@
+FlexBox
+
+    gives containers the ability to ...
+    expand and shrink Elements
+    replaces `float`; more readable and use
+    strictly one dimensional
+
+
+Flex containers 
+    to create...
+        `display: flex`
+    horizontal
+        main axis
+    vertical 
+        cross axis
+
+Properties
+    for containers
+        flex-direction                  [establishes Current MAIN Axisf]
+            row / column / *-reverse    [reverse makes elements for to the END, then reverses]
+        flex-wrap                       [creates a newline along the cross axis]
+            nowrap / wrap / *-reverse   
+        justify-content                 [current MAIN axis]
+            flex-start / flex-end
+            center / space-between / space-around / space-evenly
+        align-items                     [current CROSS axis]
+            stretch / flex-start / flex-end / center 
+            baseline [ensures all text are aligned]
+        align-content 
+            stretch / flex-start / flex-end / center 
+            space-between / space-around 
+            
+
+    for items
+        align-self                       [aligns along CROSS axis]
+            stretch / flex-start / flex-end / center 
+            auto / baseline
+        order
+            <integer>
+        flex-grow                       [1 is maximum]
+            <integer>
+        flex-shrink                     [1 = allows to shrink // 0 = overflow rather than shrink]
+            <non-zero integer>
+        flex-basis
+            auto | <length>             [percentage vw em]
+        flex:
+            <grow> <shrink> <basis>
+
+regular
+    1
+    2
+    3
+    4
+    5
+flex   
+    1   2   3   4  5
+
+
+        
