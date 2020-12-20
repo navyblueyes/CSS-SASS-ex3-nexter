@@ -119,6 +119,8 @@ Positioning
             grid-column-end: 3;
         shorthand
             grid-row: 2 / 3;  {think row LINES... NOT POSITIONS}
+                want something new?
+                    2 / span 2 [does not designate specific grid line; just the number of lines to pass]
             grid-column: 2 / 3;
         ultrashorthand
             grid-area: 2/2/3/3   {row-s / column-s / row-e / column-e}
@@ -191,3 +193,26 @@ Alignment
     -self
         ONLY for individual grid item ... NOT FOR containers    
         Allows to override the `-items` positions
+
+    -contents
+        ONLY for GROUP OF GRID ITEMS
+
+Alignment Tracks
+
+    -contents
+        ONLY for GROUP OF GRID ITEMS
+        re-aligns tracks for desired effect
+
+
+    commands
+        center
+        start
+        end
+        space-between
+        space-around
+        space-evenly
+
+    grid-auto-flow
+        dense
+            REORDERS the numerical order of items TO ENSURE all space taken
+
