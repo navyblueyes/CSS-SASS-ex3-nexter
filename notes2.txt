@@ -230,3 +230,17 @@ minmax
         ensures never shrinks more than 140px...
         after that... ensures minimum space taken in a multiline <p>
 
+autofill autofit
+    autofill    
+        fills up the rest of the spaces for more content
+            repeat(auto-fill, 100px);
+        fill UP the CONTAINER with EMPTY SPOTS that are ALREADY designated for new content
+    autofit
+        refits the CONTAINER AROUND OCCUPYING GRID ITEMS
+        shrinks the CONTAINER
+
+    BEST PRACTICE
+        repeat(autofit, minmax(200px, 1fr));
+        grid-auto-row: 150px;
+    
+
