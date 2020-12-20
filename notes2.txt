@@ -76,5 +76,54 @@ Terminalogy
         Grid Items referred to by it's top left coordinate
     coordinate  
         composed of intersecting grid line
-    
-        
+    gutter
+        spacing between coordinate and grid item
+    fr
+        fractional unit; computes remaining space and divides equally
+            100% space; 1fr, 1fr, 1fr -> 33% each
+            60% space; 1fr, 1fr, 1fr -> 20% each
+        ... use multiple fr for proportionality
+            1fr 2fr  ----> 33% for first, 66% for second
+            1fr 2fr 2fr -> 20% for first, 40% for second and third
+        things to watch out for...
+            fr ALWAYS streches out
+
+Steps
+    1. declare `grid`
+        `display: grid`
+    1. declare template
+        declare for each unit...
+            `grid-template-rows: 33px/em/rem/vw/% 33px/em/rem/vw/% 33px/em/rem/vw/%`
+            `grid-template-columns: 33px/em/rem/vw/% 33px/em/rem/vw/% 33px/em/rem/vw/%`
+        ... or combine with repeat...
+            `grid-template-rows: repeat(3, 33em);`
+        ... or use fractional units...
+            `grid-template-rows: repeat(3, 1fr);`
+    1. declare gap
+        declare for each
+            `grid-row-gap: 30px;`
+            `grid-columns-gap: 30px;`
+        ... or combine into one 
+            `grid-gap: 30px;`
+
+Positioning
+    1. moving item from 1,1 to 2,2
+        easy way
+            grid-row-start: 2;
+            grid-column-start: 2;
+            grid-row-end: 3;
+            grid-column-end: 3;
+        shorthand
+            grid-row: 2 / 3;  {think row LINES... NOT POSITIONS}
+            grid-column: 2 / 3;
+        ultrashorthand
+            grid-area: 2/2/3/3   {row-s, column-s, row-e, column-e}
+Spanning
+    1. Just add more to the end  [2/2/5/5]
+    1. Want to layer an item on top??
+        1. add a `z-index: 10`
+    1. Want to stretch a unit to the end NO MATTER WHAT?
+        1. [2/2/-1/-1]
+
+
+
