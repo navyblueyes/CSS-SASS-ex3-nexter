@@ -7,5 +7,30 @@
 }
 
 .home {
-    background-color: #fff;
+    background-color: $color-grey-light-1;
+
+    &__img {
+        width: 100%;
+    }
+    &__like {
+        width: 100%;
+    }
+    &__name {
+        width: 100%;
+    }
+    &__location,
+    &__rooms,
+    &__area,
+    &__price {
+        
+        svg {
+            fill: $color-primary;
+            height: 2rem;
+            width: 2rem;
+            
+        }
+        p {
+
+        }
+    }
 }
