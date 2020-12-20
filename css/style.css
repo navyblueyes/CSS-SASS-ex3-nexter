@@ -108,7 +108,21 @@ body {
 
 .story__pictures {
   background-color: #c69963;
-  grid-column: full-start / col-end 4; }
+  grid-column: full-start / col-end 4;
+  background-image: linear-gradient(rgba(198, 153, 99, 0.5), rgba(198, 153, 99, 0.5)), url(../img/back.jpg);
+  display: grid;
+  grid-template-rows: repeat(6, 1fr);
+  grid-template-columns: repeat(6, 1fr); }
+
+.story__img-1 {
+  width: 100%;
+  grid-area: 2 / 2 / 6 / 6;
+  justify-self: center; }
+
+.story__img-2 {
+  width: 110%;
+  grid-area: 4 / 4 / 6 / 7;
+  z-index: 30; }
 
 .story__content {
   background-color: #f9f7f6;
