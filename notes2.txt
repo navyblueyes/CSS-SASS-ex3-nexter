@@ -67,6 +67,10 @@ Intro
     Works with FlexBox
     2D version of FlexBox
 
+Methodology
+    display -> template -> positioning -> gap
+    DTPG
+
 Terminalogy
     Columns 
         vertical grid line
@@ -117,13 +121,73 @@ Positioning
             grid-row: 2 / 3;  {think row LINES... NOT POSITIONS}
             grid-column: 2 / 3;
         ultrashorthand
-            grid-area: 2/2/3/3   {row-s, column-s, row-e, column-e}
+            grid-area: 2/2/3/3   {row-s / column-s / row-e / column-e}
 Spanning
     1. Just add more to the end  [2/2/5/5]
     1. Want to layer an item on top??
         1. add a `z-index: 10`
     1. Want to stretch a unit to the end NO MATTER WHAT?
         1. [2/2/-1/-1]
+Challenge [8x8sq] ... or ... [9 x 9] in grid
+    Header ...... [1 / 1 / 2 / 9]
+    SB 1 ........ [2 / 1 / 4 / 3]
+    SB 2 ........ [2 / 3 / 4 / 5]
+    SB 3 ........ [2 / 5 / 4 / 7]
+    Sidebar ..... [2 / 7 / 8 / 9]
+    Main ........ [3 / 1 / 8 / 9]
+
+Custom Grid Line Names
+    Defined in the `template`
+        Instead of...
+            grid-template-rows: 100px 200xp 400xp 100px;
+            grid-template-rows: [header-start] 100px [header-end box-start]  200xp [box-end main-start] 400xp [main-end footer-start]  100px  [footer-end];
+        Hard work pays off when you can...
+            .sidebar {
+                grid-row: box-start / main-end;
+                ...
+            }
+        
+Custom Grid Area Names
+    Defined in the `template`
+        Instead of...
+            grid-template-rows: 100px 200xp 400xp 100px;
+            grid-template-columns: repeat(3, 1fr) 200px;
+            grid-template-rows: [header-start] 100px [header-end box-start]  200xp [box-end main-start] 400xp [main-end footer-start]  100px  [footer-end];
+        Try
+            grid-template-rows: 100px 200xp 400xp 100px;
+            grid-template-columns: repeat(3, 1fr) 200px;
+            grid-template-areas: "head head head head"
+                                 "box box box side"
+                                 "main main main side"
+                                 ". foot foot .";
+            note!!! `.` means empty 
+    TO implement
+        .header {
+            grid-area: head
+        }
 
 
+Implicit vs Explicit
+    grid-auto-rows
+        determines WHAT TO DO with extra items
+        makes a new row
+    ```grid-auto-flow: columns;
+       grid-auto-columns: #fr;```
+        instead of making a new row... makes a new column
 
+Alignment
+    align
+        align-items
+            `-items` is for ALL INDIVIDUAL ELEMENTS
+            positions along CROSS AXIS; 
+            default cross axis is vertical  
+    justify
+        justify-items
+            `-items` is for ALL INDIVIDUAL ELEMENTS
+            positions along MAIN AXIS; 
+            default main axis is horizontal  
+
+
+    -self
+        ONLY for individual grid item ... NOT FOR containers    
+        Allows to override the `-items` positions
