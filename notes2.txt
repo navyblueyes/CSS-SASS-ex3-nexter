@@ -216,3 +216,17 @@ Alignment Tracks
         dense
             REORDERS the numerical order of items TO ENSURE all space taken
 
+-content commands  
+    instead of 1fr....
+        max-content 
+            adjust row/column to fit all `content` / text IN ONE LINE!!!!!
+        min-content 
+            adjust row/column to fit all `content` / text TO ABSOLUTE MINIMUM IN A MULTI-LINE!!!!!
+        
+minmax
+    establish minimum and maximum dimensions
+    best used with max/min-content
+    minmax(140px, min-content)
+        ensures never shrinks more than 140px...
+        after that... ensures minimum space taken in a multiline <p>
+
