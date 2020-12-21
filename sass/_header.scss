@@ -13,6 +13,10 @@
     padding-top: 4rem;
     justify-content: center;
 
+    @media screen and (max-width: $bp-medium)  {
+        grid-column: 1 / -1;
+    }
+
     &__logo {
         height: 3rem;
         justify-self: center;
