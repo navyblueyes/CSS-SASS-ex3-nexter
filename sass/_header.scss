@@ -12,9 +12,12 @@
     padding: 8rem;
     padding-top: 4rem;
     justify-content: center;
-
+    
     @media screen and (max-width: $bp-medium)  {
         grid-column: 1 / -1;
+    }
+    @media screen and (max-width: $bp-medium-small)  {
+        padding: 5rem;
     }
 
     &__logo {

@@ -8,7 +8,13 @@
     align-content: center;
     grid-row-gap: 2rem;
     @media screen and (max-width: $bp-medium)  {
-        grid-columns: 1 / -1;
+        grid-column: 1 / -1;
+    }
+    @media screen and (max-width: $bp-medium-small)  {
+        padding: 0rem;
+        grid-row-gap: 0;
+        visibility: hidden;
+        opacity: 0;
     }
 
     &__list {
@@ -21,6 +27,7 @@
             width: 100%;
             grid-template-columns: repeat(3, min-content max-content);
         }
+        
     }
 
     &__img {
@@ -29,6 +36,10 @@
         display: block;
         @media screen and (max-width: $bp-largest)  {
             width: 6rem;
+        }
+        @media screen and (max-width: $bp-medium-small)  {
+            visibility: hidden;
+            opacity: 0;
         }
     }
 
