@@ -16,7 +16,8 @@ $font-display: 'Josefin Sans', sans-serif;
 
 // @media Breakpoints
 $bp-largest: 75em;   //1200px
-$bp-large: 62.5em;   //900px
+$bp-large: 62.5em;   //1000px
+
 *,
 *::before,
 *::after {
@@ -46,7 +47,7 @@ body {
     grid-template-columns: [sidebar-start] 8rem [sidebar-end full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end];
 
     @media screen and (max-width: $bp-large)  {
-        grid-template-rows: 6rem 80vh min-content 40vw repeat(3, min-content);
+        grid-template-rows: 6rem 60vh min-content 40vw repeat(3, min-content);
         grid-template-columns: [full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end];
           
     }

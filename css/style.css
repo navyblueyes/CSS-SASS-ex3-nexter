@@ -24,7 +24,7 @@ body {
   grid-template-columns: [sidebar-start] 8rem [sidebar-end full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end]; }
   @media screen and (max-width: 62.5em) {
     .container {
-      grid-template-rows: 6rem 80vh min-content 40vw repeat(3, min-content);
+      grid-template-rows: 6rem 60vh min-content 40vw repeat(3, min-content);
       grid-template-columns: [full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end]; } }
 
 .heading-1, .heading-2, .heading-3, .heading-4 {
@@ -93,7 +93,8 @@ body {
   justify-content: center; }
   @media screen and (max-width: 62.5em) {
     .sidebar {
-      grid-columns: 1 / -1;
+      display: grid;
+      grid-column: 1 / -1;
       grid-row: 1 / 2;
       justify-content: flex-end;
       align-items: center; } }
@@ -119,7 +120,11 @@ body {
   @media screen and (max-width: 62.5em) {
     .nav-btn {
       margin-top: 0rem;
-      margin-right: 3rem; } }
+      margin-right: 3rem; }
+      .nav-btn::before {
+        transform: translateY(-1.2rem); }
+      .nav-btn::after {
+        transform: translateY(1rem); } }
 
 .header {
   background-color: #54483A;
