@@ -2,6 +2,9 @@
     background-color: $color-secondary;
     grid-column: full-start / full-end;
     padding: 8rem;
+    @media screen and (max-width: $bp-largest)  {
+        padding: 4rem;
+    }
 }
 
 .nav {
@@ -26,6 +29,10 @@
     &__link:active {
         background-color: rgba(#fff, .05);
         transform: translateY(-3px );    
+    }
+
+    @media screen and (max-width: $bp-largest)  {
+        grid-gap: 1rem;
     }
 }
 

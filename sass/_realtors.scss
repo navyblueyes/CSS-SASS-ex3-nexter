@@ -20,6 +20,9 @@
         width: 10rem;
         border-radius: 50%;
         display: block;
+        @media screen and (max-width: $bp-largest)  {
+            width: 6rem;
+        }
     }
 
     &__sold {
@@ -27,5 +30,8 @@
         color: $color-grey-light-2;
         margin-top: -3px;
         font-size: 1.4rem;
+        @media screen and (max-width: $bp-largest)  {
+            font-size: 1rem;
+        }
     }
 }
